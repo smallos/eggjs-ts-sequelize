@@ -3,7 +3,7 @@ import { Application } from 'egg';
 export default(app: Application) => {
   const { INTEGER, DATE } = app.Sequelize;
 
-  const two = app.appOneModel.define('two', {
+  const two = (app as any).appOneModel.define('two', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true},
     created_at: DATE,
     updated_at: DATE,
